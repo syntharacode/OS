@@ -1,3 +1,5 @@
+![Synthara Logo](./img/logo.png)
+
 # Synthara OS
 
 Synthara OS is a modular LLM Operating System focused on autonomous learning in the crypto and technology space. It includes training pipelines, inference API, a full web frontend, CLI tools, a database layer, analytics, and agent support.
