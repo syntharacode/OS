@@ -1,4 +1,6 @@
-![Synthara Logo](./img/logo.png)
+<p align="center">
+  <img src="./img/logo.png">
+</p>
 
 # Synthara OS
 
