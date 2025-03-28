@@ -1,16 +1,21 @@
-from collections import deque
 
-# In-memory log buffer (used for frontend streaming/log viewing)
-_log_buffer = deque(maxlen=100)
+# logger_store.py
 
+import logging
 
-def log_message(message: str):
-    _log_buffer.append(message)
+# This example uses a simple in-memory log store.
+# In production, you might read from a file or logging backend.
+LOG_STORE = []
 
+def add_log(record: str, level: str = "INFO"):
+    LOG_STORE.append({"level": level.upper(), "message": record})
 
-def get_logs():
-    return list(_log_buffer)
-
-# Example usage (attach to main logger):
-# from backend.utils.logger_store import log_message
-# log_message("LLM started")
+def get_logs(limit=50, level=None):
+    # Optional filtering by log level
+    filtered_logs = LOG_STORE
+    if level:
+        level = level.upper()
+        filtered_logs = [log for log in LOG_STORE if log["level"] == level]
+    
+    # Return the most recent 'limit' logs
+    return filtered_logs[-limit:]
