@@ -14,7 +14,7 @@ setup(
         ],
     },
     author="Synthara Dev Team",
-    description="Synthara OS – Autonomous LLM system for crypto + tech",
+    description="Synthara OS – Autonomous LLM system",
     license="MIT",
     keywords=["llm", "ai", "crypto", "fastapi", "transformers"],
     zip_safe=False,
